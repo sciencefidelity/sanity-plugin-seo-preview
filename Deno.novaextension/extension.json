@@ -1,0 +1,35 @@
+{
+    "identifier": "sciencefidelity.deno",
+    "name": "Deno",
+    "organization": "Matt Cook",
+    "description": "Deno Language Server for Nova",
+    "version": "0.1.0",
+    "categories": ["languages"],
+    "license": "MIT",
+    "repository": "https://github.com/sciencefidelity/Nova-Deno",
+    "bugs": "https://github.com/sciencefidelity/Nova-Deno/issues",
+    "homepage": "https://mattcook.dev",
+    "keywords": ["deno"],
+
+    "main": "main.dist.js",
+
+    "activationEvents": [
+        "onLanguage:typescript",
+        "onLanguage:tsx",
+        "onLanguage:javascript",
+        "onLanguage:jsx"
+    ],
+    "entitlements": {
+        "process": true,
+        "filesystem": "readwrite"
+    },
+
+    "config": [
+        {
+            "key": "example.language-server-path",
+            "title": "Language Server Path",
+            "type": "path",
+            "placeholder": "/usr/local/bin/example"
+        }
+    ]
+}

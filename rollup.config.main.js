@@ -6,7 +6,7 @@ export default {
   input: "src/main.ts",
   plugins: [typescript(), commonjs(), resolve()],
   output: {
-    file: "Dart.novaextension/Scripts/main.dist.js",
+    file: "Deno.novaextension/Scripts/main.dist.js",
     sourcemap: true,
     format: "cjs",
   },

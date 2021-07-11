@@ -75,7 +75,7 @@ export async function activate() {
   console.log("activating...");
   if (nova.inDevMode()) {
     const notification = new NotificationRequest("activated");
-    notification.body = "TypeScript extension is loading";
+    notification.body = "Deno extension is loading";
     nova.notifications.add(notification);
   }
   return asyncActivate()

@@ -1,4 +1,7 @@
+nova.commands.register("sciencefidelity.deno.reload", reload);
+
 let client: LanguageClient | null = null;
+const compositeDisposable = new CompositeDisposable();
 
 async function makeFileExecutable(file: string) {
   return new Promise<void>((resolve, reject) => {
@@ -14,6 +17,12 @@ async function makeFileExecutable(file: string) {
     });
     process.start();
   });
+}
+
+async function reload() {
+  deactivate();
+  console.log("reloading...");
+  await asyncActivate();
 }
 
 async function asyncActivate() {
@@ -48,6 +57,19 @@ async function asyncActivate() {
     };
   }
 
+  let path;
+  if (nova.inDevMode() && nova.workspace.path) {
+    path = `${nova.workspace.path}/test-workspace`
+  } else {
+    path = nova.workspace.path
+  }
+
+  const initializationOptions = {
+    "enable": true,
+    "lint": true
+  }
+
+  const syntaxes = ["typescript", "tsx", "javascript", "jsx"];
   client = new LanguageClient(
     "sciencefidelity.deno",
     "Deno Language Server",
@@ -55,16 +77,38 @@ async function asyncActivate() {
       type: "stdio",
       ...serviceArgs,
       env: {
-        WORKSPACE_DIR: nova.workspace.path ?? "",
+        WORKSPACE_DIR: path || ""
       },
     },
     {
-      initializationOptions: {
-        "enable": true,
-        "lint": true
-      },
-      syntaxes: ["typescript", "javascript"]
+      initializationOptions,
+      syntaxes
     }
+  );
+
+  compositeDisposable.add(
+    client.onDidStop((err) => {
+
+      let message = "Deno Language Server stopped unexpectedly";
+      if (err) {
+        message += `:\n\n${err.toString()}`;
+      } else {
+        message += ".";
+      }
+      message +=
+        "\n\nPlease report this, along with any output in the Extension Console.";
+      nova.workspace.showActionPanel(
+        message,
+        {
+          buttons: ["Restart", "Ignore"],
+        },
+        (index) => {
+          if (index == 0) {
+            nova.commands.invoke("sciencefidelity.deno.reload");
+          }
+        }
+      );
+    })
   );
 
   client.start();
@@ -91,4 +135,5 @@ export async function activate() {
 
 export function deactivate() {
   client?.stop();
+  compositeDisposable.dispose();
 }

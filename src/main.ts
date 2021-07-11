@@ -1,3 +1,5 @@
+import { cache } from "./lspExtensions"
+
 nova.commands.register("sciencefidelity.deno.reload", reload);
 
 let client: LanguageClient | null = null;

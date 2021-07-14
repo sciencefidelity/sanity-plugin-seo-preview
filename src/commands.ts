@@ -1,5 +1,5 @@
+import type * as lspTypes from "vscode-languageserver-protocol";
 import { wrapCommand } from "./novaUtils";
-import { cache as cacheReq } from "./lspExtensions";
 
 /** For the current document active in the editor tell the Deno LSP to cache
  * the file and all of its dependencies in the local cache. */
@@ -10,27 +10,17 @@ export function registerCache(client: LanguageClient) {
     wrapCommand(cache)
   );
 
-  async function cache(editor: TextEditor) {
-    return (uris: DocumentUri[] = []) => {
-      const activeEditor = nova.window.activeTextEditor;
-      const client = extensionContext.client;
-      if (!activeEditor || !client) {
-        return;
-      }
-      return nova.window.withProgress({
-        location: nova.ProgressLocation.Window,
-        title: "caching",
-      }, () => {
-        return client.sendRequest(
-          cacheReq,
-          {
-            referrer: { uri: activeEditor.document.uri.toString() },
-            uris: uris.map((uri) => ({
-              uri,
-            })),
-          },
-        );
-      });
-    };
+  async function cache() {
+    const notification = new NotificationRequest("caching");
+    notification.body = "Deno is caching dependencies";
+    nova.notifications.add(notification);
+
+    const response = (await client.sendRequest(
+      "deno/cache",
+    )) as lspTypes.Location[] | null;
+    if (response == null) {
+      nova.workspace.showInformativeMessage("Couldn't cache dependencies.");
+      return;
+    }
   }
 }

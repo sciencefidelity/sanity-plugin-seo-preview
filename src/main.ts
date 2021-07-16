@@ -1,5 +1,4 @@
 // import { cache } from "./lspExtensions"
-import { registerCache } from "./commands";
 
 nova.commands.register("sciencefidelity.deno.reload", reload);
 
@@ -90,7 +89,7 @@ async function asyncActivate() {
   );
 
   // register nova commands
-  compositeDisposable.add(registerCache(client));
+  compositeDisposable.add(cache(client));
 
   compositeDisposable.add(
     client.onDidStop((err) => {

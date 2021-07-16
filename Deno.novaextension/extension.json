@@ -31,5 +31,27 @@
             "type": "path",
             "placeholder": "/usr/local/bin/example"
         }
-    ]
+    ],
+
+    "commands": {
+        "extensions": [
+            {
+                "title": "Preferences",
+                "command": "sciencefidelity.deno.openWorkspaceConfig"
+            },
+            {
+                "title": "Restart Server",
+                "command": "sciencefidelity.deno.reload"
+            }
+        ],
+        "editor": [
+            {
+                "title": "Cache Imports",
+                "command": "sciencefidelity.deno.cache",
+                "filters": {
+                    "syntaxes": ["typescript", "tsx", "javascript", "jsx"]
+                }
+            }
+        ]
+    }
 }

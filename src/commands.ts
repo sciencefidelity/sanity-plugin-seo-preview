@@ -1,32 +1,47 @@
 import type { DocumentUri } from "vscode-languageclient/node";
-import type { DenoExtensionContext } from "./types";
+// import type { DenoExtensionContext } from "./types";
+import type * as lspTypes from "vscode-languageserver-protocol";
+import { wrapCommand } from "./novaUtils";
 
-const cacheReq = "deno/cache";
+export function registerCashe(client: LanguageClient) {
+  return nova.commands.register(
+    "sciencefidelity.deno.cache",
+    wrapCommand(cache)
+  );
 
-export type Callback = (...args: any[]) => unknown;
-export type Factory = (
-  extensionContext: DenoExtensionContext,
-) => Callback;
+  /** For the current document active in the editor tell the Deno LSP
+  to cache the file and all of its dependencies in the local cache. */
+  async function cache(
+    editor: TextEditor,
+    uris: DocumentUri[] = []
+  ) {
 
-/** For the current document active in the editor tell the Deno LSP
-to cache the file and all of its dependencies in the local cache. */
-export function cache(
-  extensionContext: DenoExtensionContext,
-  editor: TextEditor
-): Callback {
-  return (uris: DocumentUri[] = []) => {
-    const client = extensionContext.client;
     const notification = new NotificationRequest("caching");
     notification.body = "Deno is caching dependencies";
     nova.notifications.add(notification);
-    return client?.sendRequest(
-      cacheReq,
+
+    await client.sendRequest(
+      "deno/cache",
       {
         referrer: { uri: editor.document.uri.toString() },
         uris: uris.map((uri) => ({
           uri,
         })),
       },
-    );
+    ) as (lspTypes.Command | lspTypes.CodeAction)[] | null;
+  }
+}
+
+// https://microsoft.github.io/language-server-protocol/specifications/specification-current/#workspace_executeCommand
+// NOTE: this actually handled "externally" in the applyEdit command handler
+export async function executeCommand(
+  client: LanguageClient,
+  command: lspTypes.Command
+) {
+  console.info("executing command", command.command);
+  const params: lspTypes.ExecuteCommandParams = {
+    command: command.command,
+    arguments: command.arguments,
   };
+  return client.sendRequest("workspace/executeCommand", params);
 }

@@ -1,4 +1,12 @@
-import { registerCashe } from "./commands";
+import { registerCache } from "./commands";
+import { wrapCommand } from "./novaUtils";
+
+nova.commands.register(
+  "sciencefidelity.deno.openWorkspaceConfig",
+  wrapCommand(function openWorkspaceConfig(workspace: Workspace) {
+    workspace.openConfig();
+  })
+);
 
 nova.commands.register("sciencefidelity.deno.reload", reload);
 
@@ -89,7 +97,7 @@ async function asyncActivate() {
   );
 
   // register nova commands
-  compositeDisposable.add(registerCashe(client));
+  compositeDisposable.add(registerCache(client));
 
   compositeDisposable.add(
     client.onDidStop((err) => {

@@ -47,7 +47,7 @@
         "editor": [
             {
                 "title": "Cache Imports",
-                "command": "sciencefidelity.deno.cache",
+                "command": "sciencefidelity.deno.commands.cache",
                 "filters": {
                     "syntaxes": ["typescript", "tsx", "javascript", "jsx"]
                 }

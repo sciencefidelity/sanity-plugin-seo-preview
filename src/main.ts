@@ -71,8 +71,8 @@ async function asyncActivate() {
     "enable": true,
     "lint": true
   }
-
   const syntaxes = ["typescript", "tsx", "javascript", "jsx"];
+
   client = new LanguageClient(
     "sciencefidelity.deno",
     "Deno Language Server",

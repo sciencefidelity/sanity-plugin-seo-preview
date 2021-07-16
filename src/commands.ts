@@ -10,17 +10,51 @@ export function registerCache(client: LanguageClient) {
     wrapCommand(cache)
   );
 
-  async function cache() {
-    const notification = new NotificationRequest("caching");
-    notification.body = "Deno is caching dependencies";
-    nova.notifications.add(notification);
+  async function cache(editor: TextEditor): Promise<void>;
+  async function cache(
+    workspace: Workspace,
+    editor: TextEditor
+  ): Promise<void>;
+  async function cache(
+    editorOrWorkspace: TextEditor | Workspace,
+    maybeEditor?: TextEditor
+  ) {
 
-    const response = (await client.sendRequest(
-      "deno/cache",
-    )) as lspTypes.Location[] | null;
-    if (response == null) {
-      nova.workspace.showInformativeMessage("Couldn't cache dependencies.");
+    const editor: TextEditor = maybeEditor ?? (editorOrWorkspace as TextEditor);
+
+    // const originalSelections = editor.selectedRanges;
+    // const originalLength = editor.document.length;
+
+    if (!editor.document.path) {
+      nova.workspace.showWarningMessage(
+        "Please save this document before organizing imports."
+      );
       return;
     }
+
+    // const notification = new NotificationRequest("caching");
+    // notification.body = "Deno is caching dependencies";
+    // nova.notifications.add(notification);
+
+    const cacheDependencies: lspTypes.DocumentFormattingParams = {
+      textDocument: { uri: editor.document.uri },
+      options: {
+        insertSpaces: editor.softTabs,
+        tabSize: editor.tabLength,
+      },
+    };
+
+    const cacheDependenciesCommand: lspTypes.ExecuteCommandParams = {
+      command: "_deno.cacheDependencies",
+      arguments: [editor.document.path],
+    };
+
+    await client.sendRequest("deno/cache", cacheDependencies);
+
+    await client.sendRequest(
+      "workspace/executeCommand",
+      cacheDependenciesCommand
+    );
+
   }
 }

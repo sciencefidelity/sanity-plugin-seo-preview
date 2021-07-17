@@ -1,12 +1,13 @@
 import type { DocumentUri } from "vscode-languageclient/node";
 import type * as lspTypes from "vscode-languageserver-protocol";
+import { applyWorkspaceEdit } from "./applyWorkspaceEdit";
 import { wrapCommand } from "./novaUtils";
 
 /** For the current document active in the editor tell the Deno LSP
 to cache the file and all of its dependencies in the local cache. */
 export function registerCache(client: LanguageClient) {
   return nova.commands.register(
-    "sciencefidelity.deno.commands.cache",
+    "deno.cache",
     wrapCommand(cache)
   );
 
@@ -30,13 +31,18 @@ export function registerCache(client: LanguageClient) {
     );
 
     const cacheCommand: lspTypes.ExecuteCommandParams = {
-      command: "_deno.cacheImports",
-      arguments: [editor.document.path],
+      command: "deno.cache",
+      arguments: [editor.document.path]
     };
-    await client.sendRequest(
+    const response = (await client.sendRequest(
       "workspace/executeCommand",
       cacheCommand
-    );
+    )) as lspTypes.WorkspaceEdit | null;
+    if (response == null) {
+      nova.workspace.showWarningMessage("Couldn't cache dependencies.");
+      return;
+    }
+    await applyWorkspaceEdit(response);
 
   }
 }

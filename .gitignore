@@ -1,6 +1,5 @@
 .DS_Store
 node_modules
-.nova
 *.bak
 /Deno.novaextension/Scripts
 logs/

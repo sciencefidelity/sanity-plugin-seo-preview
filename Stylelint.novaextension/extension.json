@@ -1,15 +1,15 @@
 {
-    "identifier": "sciencefidelity.deno",
-    "name": "Deno",
+    "identifier": "sciencefidelity.stylelint",
+    "name": "Stylelint",
     "organization": "Matt Cook",
-    "description": "Deno Language Server for Nova",
+    "description": "Stylelint Language Server for Nova",
     "version": "0.1.0",
     "categories": ["languages"],
     "license": "MIT",
-    "repository": "https://github.com/sciencefidelity/Nova-Deno",
-    "bugs": "https://github.com/sciencefidelity/Nova-Deno/issues",
+    "repository": "https://github.com/sciencefidelity/Nova-Stylelint",
+    "bugs": "https://github.com/sciencefidelity/Nova-Stylelint/issues",
     "homepage": "https://mattcook.dev",
-    "keywords": ["deno"],
+    "keywords": ["stylelint"],
 
     "main": "main.dist.js",
 
@@ -37,20 +37,11 @@
         "extensions": [
             {
                 "title": "Preferences",
-                "command": "sciencefidelity.deno.openWorkspaceConfig"
+                "command": "sciencefidelity.stylelint.openWorkspaceConfig"
             },
             {
                 "title": "Restart Server",
-                "command": "sciencefidelity.deno.reload"
-            }
-        ],
-        "editor": [
-            {
-                "title": "Cache Dependencies",
-                "command": "deno.cache",
-                "filters": {
-                    "syntaxes": ["typescript", "tsx", "javascript", "jsx"]
-                }
+                "command": "sciencefidelity.stylelint.reload"
             }
         ]
     }

@@ -1,5 +1,5 @@
 {
   "workspace.art_style" : 1,
-  "workspace.color" : 1,
-  "workspace.name" : "Deno"
+  "workspace.color" : 8,
+  "workspace.name" : "Stylelint"
 }

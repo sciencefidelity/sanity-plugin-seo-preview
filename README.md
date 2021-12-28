@@ -1,1 +1,1 @@
-# Nova-Deno
+# Nova-Stylelint

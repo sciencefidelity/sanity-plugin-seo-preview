@@ -1,14 +1,14 @@
 {
-  "name": "Nova-Deno",
+  "name": "Nova-Stylelint",
   "version": "0.1.0",
-  "description": "Deno Language Server for Nova",
+  "description": "Stylelint Language Server for Nova",
   "main": "main.ts",
   "scripts": {
     "build": "rollup -c rollup.config.main.js && rm -rf Deno.novaextension/node_modules",
     "test": "jest",
     "watch": "onchange -i \"src/**\" \"rollup.*.js\" -- npm run build"
   },
-  "repository": "https://github.com/sciencefidelity/Nova-Deno.git",
+  "repository": "https://github.com/sciencefidelity/Nova-Stylelint.git",
   "author": "Matt Cook",
   "license": "MIT",
   "private": true,

@@ -35,7 +35,6 @@ async function reload() {
 }
 
 async function asyncActivate() {
-
   const runFile = nova.path.join(nova.extension.path, "run.sh")
 
   // Uploading to the extension library makes this file not executable, so fix that

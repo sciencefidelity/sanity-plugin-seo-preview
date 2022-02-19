@@ -1,48 +1,50 @@
 {
-    "identifier": "sciencefidelity.stylelint",
-    "name": "Stylelint",
-    "organization": "Matt Cook",
-    "description": "Stylelint Language Server for Nova",
-    "version": "0.1.0",
-    "categories": ["languages"],
-    "license": "MIT",
-    "repository": "https://github.com/sciencefidelity/Nova-Stylelint",
-    "bugs": "https://github.com/sciencefidelity/Nova-Stylelint/issues",
-    "homepage": "https://mattcook.dev",
-    "keywords": ["stylelint"],
+  "identifier": "sciencefidelity.stylelint",
+  "name": "Stylelint",
+  "organization": "Matt Cook",
+  "description": "Stylelint for Nova",
+  "version": "0.1.0",
+  "categories": ["issues", "commands", "formatters"],
+  "license": "MIT",
+  "repository": "https://github.com/sciencefidelity/Nova-Stylelint",
+  "bugs": "https://github.com/sciencefidelity/Nova-Stylelint/issues",
+  "homepage": "https://mattcook.dev",
+  "keywords": ["stylelint"],
 
-    "main": "main.dist.js",
+  "main": "main.dist.js",
 
-    "activationEvents": [
-        "onLanguage:typescript",
-        "onLanguage:tsx",
-        "onLanguage:javascript",
-        "onLanguage:jsx"
-    ],
-    "entitlements": {
-        "process": true,
-        "filesystem": "readwrite"
-    },
+  "activationEvents": [
+    "onLanguage:css",
+    "onLanguage:scss",
+    "onLanguage:sass",
+    "onLanguage:less",
+    "onLanguage:html"
+  ],
 
-    "config": [
-        {
-            "key": "example.language-server-path",
-            "title": "Language Server Path",
-            "type": "path",
-            "placeholder": "/usr/local/bin/example"
-        }
-    ],
+  "entitlements": {
+    "process": true,
+    "filesystem": "readwrite"
+  },
 
-    "commands": {
-        "extensions": [
-            {
-                "title": "Preferences",
-                "command": "sciencefidelity.stylelint.openWorkspaceConfig"
-            },
-            {
-                "title": "Restart Server",
-                "command": "sciencefidelity.stylelint.reload"
-            }
-        ]
+  "config": [
+    {
+      "key": "sciencefidelity.languageServerPath",
+      "title": "Language Server Path",
+      "type": "path",
+      "placeholder": "/usr/local/bin/example"
     }
+  ],
+
+  "commands": {
+    "extensions": [
+      {
+        "title": "Preferences",
+        "command": "sciencefidelity.stylelint.openWorkspaceConfig"
+      },
+      {
+        "title": "Restart Server",
+        "command": "sciencefidelity.stylelint.reload"
+      }
+    ]
+  }
 }

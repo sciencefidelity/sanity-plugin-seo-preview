@@ -1,7 +1,7 @@
 import type { DocumentUri } from "vscode-languageclient/node";
 import type * as lspTypes from "vscode-languageserver-protocol";
-import { applyWorkspaceEdit } from "./applyWorkspaceEdit";
-import { wrapCommand } from "./novaUtils";
+import { applyWorkspaceEdit } from "../applyWorkspaceEdit";
+import { wrapCommand } from "../novaUtils";
 
 /** For the current document active in the editor tell the Deno LSP
 to cache the file and all of its dependencies in the local cache. */

@@ -1,7 +1,7 @@
 .DS_Store
 node_modules
 *.bak
-/Deno.novaextension/Scripts
-logs/
-coverage/
+Scripts
+logs
+coverage
 *.log

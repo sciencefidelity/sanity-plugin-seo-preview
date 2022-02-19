@@ -81,8 +81,8 @@ async function asyncActivate() {
   const syntaxes = ["typescript", "tsx", "javascript", "jsx"];
 
   client = new LanguageClient(
-    "sciencefidelity.deno",
-    "Deno Language Server",
+    "sciencefidelity.stylelint",
+    "Stylelint Language Server",
     {
       type: "stdio",
       ...serviceArgs,
@@ -102,7 +102,7 @@ async function asyncActivate() {
   compositeDisposable.add(
     client.onDidStop((err) => {
 
-      let message = "Deno Language Server stopped unexpectedly";
+      let message = "Stylelint Language Server stopped unexpectedly";
       if (err) {
         message += `:\n\n${err.toString()}`;
       } else {
@@ -117,7 +117,7 @@ async function asyncActivate() {
         },
         (index) => {
           if (index == 0) {
-            nova.commands.invoke("sciencefidelity.deno.reload");
+            nova.commands.invoke("sciencefidelity.stylelint.reload");
           }
         }
       );
@@ -132,7 +132,7 @@ export async function activate() {
   console.log("activating...");
   if (nova.inDevMode()) {
     const notification = new NotificationRequest("activated");
-    notification.body = "Deno extension is loading";
+    notification.body = "Stylelint extension is loading";
     nova.notifications.add(notification);
   }
   return asyncActivate()

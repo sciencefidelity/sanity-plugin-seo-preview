@@ -1,1 +1,1 @@
-./Deno.novaextension/LICENSE.md
+Stylelint.novaextension/LICENSE.md

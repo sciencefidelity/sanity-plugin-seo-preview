@@ -1,4 +1,4 @@
-import { registerCache } from "./commands";
+import { registerCache } from "./commands/cache";
 import { wrapCommand } from "./novaUtils";
 
 nova.commands.register(

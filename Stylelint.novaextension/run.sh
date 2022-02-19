@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 cd "$WORKSPACE_DIR"
-deno lsp
+stylelint --formatter json --stdin-filename

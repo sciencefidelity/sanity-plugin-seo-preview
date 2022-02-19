@@ -1,971 +1,114 @@
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline
-}
-
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-    display: block
-}
-
-body {
-    line-height: 1
-}
-
-ol, ul {
-    list-style: none
-}
-
-#qc-cmp2-ui {
-    background: #FFF
-}
-
-.qc-cmp-cleanslate button {
-    background: #108c98;
-    color: #FFF;
-    border-radius: 10px;
-    font-weight: bold;
-    font-size: 1em;
-    text-transform: none;
-    line-height: 1.5em;
-}
-
-blockquote, q {
-    quotes: none
-}
-
-blockquote:before, blockquote:after, q:before, q:after {
-    content: '';
-    content: none
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0
-}
-
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-    display: block
-}
+// https://badhtml.com
 
 #tetris {
-    margin: 0 auto;
-    padding: 0;
-    color: #FFFFFF
+  margin: 0 auto;
+  padding: 0;
+  color: #FFFFFF
 }
 
 #stats {
-    display: inline-block;
-    vertical-align: top
+  display: inline-block;
+  vertical-align: top
 }
 
 #canvas {
-    display: inline-block;
-    vertical-align: top;
-    border: 2px solid #333;
-    background-color: #ffffff
+  display: inline-block;
+  vertical-align: top;
+  border: 2px solid #333;
+  background-color: #ffffff
 }
 
 #menu {
-    display: inline-block;
-    vertical-align: top;
-    position: relative
+  display: inline-block;
+  vertical-align: top;
+  position: relative
 }
 
 #menu p {
-    margin: 0.5em 0;
-    text-align: center
+  margin: 0.5em 0;
+  text-align: center
 }
 
 #start {
-    Color: #F00
+  Color: #F00
 }
 
 #menu p a {
-    text-decoration: none;
-    color: yellow;
-    text-shadow: 1px 1px 4px #000
+  text-decoration: none;
+  color: yellow;
+  text-shadow: 1px 1px 4px #000
 }
 
 #upcoming {
-    display: block;
-    margin: 0 auto;
-    background-color: #E0E0E0
+  display: block;
+  margin: 0 auto;
+  background-color: #E0E0E0
 }
 
 #score {
-    color: red;
-    font-weight: bold;
-    vertical-align: middle
+  color: red;
+  font-weight: bold;
+  vertical-align: middle
 }
 
 #rows {
-    color: red;
-    font-weight: bold;
-    vertical-align: middle
+  color: red;
+  font-weight: bold;
+  vertical-align: middle
 }
 
 #tetris {
-    font-size: 16px
+  font-size: 16px
 }
 
 #menu {
-    width: 100px;
-    height: 100px
+  width: 100px;
+  height: 100px
 }
 
 #upcoming {
-    width: 50px;
-    height: 50px
+  width: 50px;
+  height: 50px
 }
 
 #canvas {
-    width: 120px;
-    height: 205px
-}
-
-.h1, h1 {
-    font-size: 36px;
-    margin-right: 100px;
-    margin-bottom: 20px
-}
-
-input {
-    font-size: 15px
-}
-
-article {
-    padding: 17px;
-    background: transparent url("/img/scrolldown.gif") no-repeat scroll right top
-}
-
-.clearboth {
-    clear: both;
-    height: 1px !important;
-    outline: none !important;
-    float: none !important
-}
-
-a {
-    color: #00F;
-    text-decoration: none
-}
-
-.cmiddle a:focus, .cmiddle a:hover {
-    color: #F00 !important;
-    text-decoration: none
-}
-
-ol, ul {
-    margin-top: 0;
-    margin-bottom: 10px;
-    padding-left: 1.5em;
-    font-size: 1.1em
-}
-
-html {
-    cursor: url("img/cursor.gif"), pointer
-}
-
-body {
-    color: #fff;
-    background-image: url("img/rainbowback.jpg");
-    font-family: "Comic Sans MS", cursive, sans-serif
-}
-
-a:href {
-    cursor: pointer
-}
-
-.wrapPageFrame {
-    width: 100%;
-    overflow-x: hidden
-}
-
-.pageframe {
-    float: left;
-    font-size: 16px;
-    max-width: 1300px;
-    margin: 20px 0 20px 3%;
-    outline: 1px solid #FFF;
-    background: rgba(0, 0, 0, 0.3);
-    width: 94%
-}
-
-.pageframe > div {
-    clear: both
-}
-
-.pageframe > div > div {
-    float: left;
-    outline: 5px dotted #FFF;
-    position: relative
-}
-
-.pageframe > div > div.hright {
-    position: inherit
-}
-
-.imageright {
-    float: right;
-    margin: 0 0 5px 20px
-}
-
-.header {
-}
-
-.content {
-}
-
-.footer {
-    background: url(img/sparklinggif.gif) center center
-}
-
-.snowflake {
-    position: fixed;
-    color: #FFFFFF;
-    text-shadow: 2px 2px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #000000, -2px -2px 0 #000000, 2px 0px 0 #000000, 0px 2px 0 #000000, -2px 0px 0 #000000, 0px -2px 0 #000000
-}
-
-.marquee {
-    width: 100%;
-    overflow: hidden;
-    height: 30px;
-    line-height: 30px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #eee
-}
-
-.hleft, .cleft, .fleft {
-    width: 20%
-}
-
-.fleft img {
-    margin-bottom: 5px
-}
-
-.fleft p {
-    border-top: 5px dotted #FFF;
-    text-align: center;
-    margin-top: 12px;
-    padding: 10px;
-    font-size: 17px
-}
-
-.hright, .cright, .fright {
-    width: 24%;
-    padding: 0;
-    font-family: monospace
-}
-
-.cmiddle a {
-    color: #317399;
-    text-decoration: underline
-}
-
-.cmiddle img {
-    max-width: 100%
-}
-
-.hmiddle, .cmiddle, .fmiddle {
-    width: 56%;
-    padding: 10px 0
-}
-
-.header > div {
-    height: 140px
-}
-
-.content > div {
-    height: 530px
-}
-
-.footer > div {
-    height: 260px;
-    text-align: center
-}
-
-.addthisek {
-    padding: 1px
-}
-
-.subscribecaptcha {
-    display: none
-}
-
-#logo {
-    display: inline-block;
-    height: 120px;
-    width: 222px;
-    background: transparent url("/img/logo-grad.png") no-repeat scroll 0% 0%;
-    text-indent: -1111px
-}
-
-.hleft {
-    text-align: center
-}
-
-.hmiddle {
-    padding: 0
-}
-
-.hright {
-    width: 24%
-}
-
-.cleft {
-    background: url(img/rainbowback.jpg) bottom center repeat-x transparent
-}
-
-.cmiddle {
-    overflow-y: scroll;
-    background: rgba(255, 255, 255, 0.5) none repeat scroll 0% 0%;
-    color: #000
-}
-
-.cmiddle p {
-    font-size: 1.5em;
-    line-height: 1.35em;
-    margin-bottom: 1.1em
-}
-
-.cright {
-    text-align: center;
-    line-height: 2em;
-    font-size: 19px
-}
-
-.cright p {
-    line-height: 1em
-}
-
-.fleft {
-}
-
-.fmiddle {
-}
-
-.fright {
-}
-
-.cmiddle span {
-    background-color: #0663D2;
-    color: #fff
-}
-
-.cmiddle pre span {
-    background-color: #fff;
-    color: #000
-}
-
-#footnotes {
-    clear: both;
-    border-right: 1px solid #888;
-    border-left: 1px solid #888;
-    border-bottom: 1px solid #888;
-    padding: 20px 30px
-}
-
-#clickMeButton {
-    margin: 0px 5px 15px;
-    line-height: 1.3em;
-    color: #000;
-    background-color: #CCC;
-    font-weight: bold;
-    padding: 2px 5px;
-    border-width: 2px 3px 3px 2px;
-    border-style: solid;
-    border-color: #FFF #777 #777 #FFF;
-    border-radius: 2px;
-    min-width: 132px
-}
-
-#clickMeButton:hover {
-    background-color: #ddd
-}
-
-#notfoundimg {
-    margin: 10px
-}
-
-.cright ul {
-    text-align: left
-}
-
-.cright li a {
-    color: #FF0
-}
-
-.likeContainer {
-    width: 125px;
-    position: relative;
-    overflow: hidden;
-    float: left;
-    display: block;
-    height: 24px
-}
-
-.counterBox {
-    float: left
-}
-
-.myface {
-    float: left;
-    width: 310px;
-    padding-top: 10px;
-    padding-left: 20px
-}
-
-.footerright {
-    position: absolute;
-    width: 305px;
-    bottom: 10px;
-    right: 10px
-}
-
-.cleft ul {
-    margin: 0px;
-    list-style: outside none none;
-    padding: 0
-}
-
-.cleft ul li {
-}
-
-.cleft ul li a {
-    background: transparent url("/img/handstill.gif") no-repeat scroll left center;
-    padding: 5px 2px 5px 58px;
-    height: 35px;
-    display: block;
-    margin-left: 10px;
-    font-weight: bold;
-    font-size: 1.1em;
-    line-height: 1em;
-    text-shadow: 2px 2px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #000000, -2px -2px 0 #000000, 2px 0px 0 #000000, 0px 2px 0 #000000, -2px 0px 0 #000000, 0px -2px 0 #000000
-}
-
-.cleft ul li a:hover {
-    background-image: url("/img/handr.gif");
-    background-color: #FF0
-}
-
-.cleft ul li:nth-child(1) a {
-    color: #C8b70D;
-}
-
-.cleft ul li:nth-child(2) a {
-    color: #0bc;
-}
-
-.cleft ul li:nth-child(3) a {
-    color: #fCFD08;
-}
-
-.cleft ul li:nth-child(4) a {
-    color: #08CD3A;
-}
-
-.cleft ul li:nth-child(5) a {
-    color: #FD9D08;
-}
-
-.cleft ul li:nth-child(6) a {
-    color: #FD08C0;
-}
-
-.cleft ul li:nth-child(7) a {
-    color: #9D98fB;
-}
-
-.cleft ul li:nth-child(8) a {
-    color: #087FFD;
-}
-
-.cleft ul li:nth-child(9) a {
-    color: #08FDCF;
-}
-
-.cleft ul li:nth-child(10) a {
-    color: #EFA067;
-}
-
-.cleft ul li:nth-child(11) a {
-    color: #4279f3;
-}
-
-.cleft ul li:nth-child(12) a {
-    color: #92b973;
-}
-
-.arrowpointer {
-    margin: 40px 10px 0px 25px;
-    float: left
-}
-
-.eyescontainer {
-    height: 112px;
-    width: 150px;
-    overflow: hidden;
-    float: left;
-    margin: -10px 0 5px -64px
-}
-
-.wrapFBcont {
-    clear: both;
-    position: relative;
-    top: -5px;
-    left: 20px
-}
-
-#jseye1 {
-    position: absolute;
-    left: 72.4915px;
-    top: 52.7905px
-}
-
-#jseye2 {
-    position: absolute;
-    left: 85.5039px;
-    top: 44.5673px
-}
-
-.quotelist, .tiplist {
-    padding: 10px;
-    list-style: outside none none
-}
-
-.quotelist li {
-    border-radius: 15px;
-    clear: both;
-    padding: 0.5em 1em 1.1em 3.5em;
-    margin-bottom: 1em;
-    background: #b3c3c3 url("pics/quote-back.png") no-repeat scroll left bottom;
-    float: left;
-    font-size: 1.1em;
-    color: #317399;
-    font-style: italic
-}
-
-.tiplist li {
-    border-radius: 15px;
-    clear: both;
-    padding: .5em 1em .5em 2.5em;
-    margin-bottom: 0.7em;
-    background: rgba(255, 255, 255, 0.5) url(pics/checklist-checked.png) no-repeat scroll left top;
-    float: left;
-    font-size: 1.1em;
-    font-weight: bold;
-    color: #000
-}
-
-.tiplist li strong {
-    color: #317399
-}
-
-.socialShareLinks li {
-    float: left;
-    margin: 2px
-}
-
-.socialShareLinks {
-    list-style: none
-}
-
-.socialShareLinks li a {
-    display: inline-block;
-    padding: 0 2px 10px 0
-}
-
-.socialShareLinks li a:hover {
-    background-color: #fff
-}
-
-.socialShareLinks li a img {
-    width: 100%;
-}
-
-#clock {
-    width: 100px;
-    height: 100px;
-    position: relative;
-    background-image: url("/img/clock.png");
-    background-size: cover
-}
-
-#clock > div {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform-origin: 0px 0px;
-    border-width: 1px;
-    border-style: solid
-}
-
-#second {
-    width: 40%;
-    border-color: blue
-}
-
-#minute {
-    width: 35%;
-    border-color: green
-}
-
-#hour {
-    width: 25%;
-    border-color: red
-}
-
-.rotate-sec {
-    -webkit-animation: rotateSec 60s linear infinite forwards;
-    -moz-animation: rotateSec 60s linear infinite forwards;
-    -ms-animation: rotateSec 60s linear infinite forwards;
-    -o-animation: rotateSec 60s linear infinite forwards;
-    animation: rotateSec 60s linear infinite forwards
-}
-
-.rotate-min {
-    -webkit-animation: rotateMin 3600s linear infinite forwards;
-    -moz-animation: rotateMin 3600s linear infinite forwards;
-    -ms-animation: rotateMin 3600s linear infinite forwards;
-    -o-animation: rotateMin 3600s linear infinite forwards;
-    animation: rotateMin 3600s linear infinite forwards
-}
-
-.rotate-hr {
-    -webkit-animation: rotateHr 43200s linear infinite forwards;
-    -moz-animation: rotateHr 43200s linear infinite forwards;
-    -ms-animation: rotateHr 43200s linear infinite forwards;
-    -o-animation: rotateHr 43200s linear infinite forwards;
-    animation: rotateHr 43200s linear infinite forwards
-}
-
-.analogClock iframe {
-    width: 120px;
-    height: 115px;
-    overflow: hidden;
-    border: none
-}
-
-.analogClock {
-    float: left;
-    width: 100px;
-    height: 100px
-}
-
-.gameWidget iframe {
-    width: 215px;
-    height: 215px;
-    overflow: hidden;
-    border: none
-}
-
-.weatherIframe {
-    float: right;
-    width: 118px;
-    height: 111px;
-    overflow: hidden
-}
-
-.weatherIframe > div {
-    width: 122px;
-    height: 175px;
-    overflow: hidden;
-    border: medium none;
-    margin: -42px -2px 0px;
-    -moz-transform: scale(0.9);
-    -webkit-transform: scale(0.9);
-    -o-transform: scale(0.9);
-    -ms-transform: scale(0.9);
-    transform: scale(0.9)
-}
-
-.brandz {
-    width: 100%;
-    min-height: 100px;
-    background: #141212 url("/pics/brands.png") repeat-x scroll left center;
-    clear: both;
-    border-bottom: 5px solid #141212;
-    border-top: 5px solid #141212
-}
-
-.makeSenseContainer {
-    margin: 2px 0 0 130px
-}
-
-.footerbrandz {
-    padding-top: 40px
-}
-
-.qc-cmp2-summary-buttons {
-    text-align: center
-}
-
-.qc-cmp2-summary-buttons button {
-    display: inline-block;
-    font-size: 16px;
-    text-transform: uppercase;
-    padding: 10px 20px;
-    margin: 5px 10px;
-    font-weight: bold;
-}
-
-.qc-cmp2-main {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 5px;
-    text-align: center;
-}
-
-.qc-cmp2-summary-info button {
-    display: inline-block !important;
-    width: auto !important;
-    padding: 0 !important;
-    min-width: 0 !important;
-    text-transform: initial !important;
-    min-height: 0 !important;
-    font-weight: bold !important;
-}
-
-.qc-cmp2-container h2 {
-    font-size: 1.4em
-}
-
-.qc-cmp2-summary-buttons button:nth-child(3) {
-    background: #206dc5;
-    color: #FFF;
-}
-
-#mobiletoggle {
-    display: none;
-    height: 50px;
-    width: 100%;
-    background: transparent url("/img/mobiletoggle.png") no-repeat scroll 5px 5px;
-    cursor: pointer
-}
-
-.leftpointer {
-    float: left
-}
-
-.rightpointer {
-    float: right
-}
-
-.donate {
-    text-align: center;
-    padding: 20px 5px 24px
-}
-
-#headerleftsect {
-    clear: both;
-    float: left;
-    margin: 4px 10px 0px
-}
-
-#music {
-    height: 24px;
-    width: 41px;
-    overflow: hidden;
-    border: 3px solid #FF0;
-    border-radius: 5px;
-    position: relative;
-    background-color: rgb(0, 0, 0);
-    float: left
-}
-
-#music > div {
-    width: 260px;
-    height: 163px;
-    margin-top: -71px;
-    margin-left: -113px
-}
-
-#musicContainer {
-    color: #ff0;
-    text-shadow: 3px 3px 3px #FFF;
-    font-weight: bold;
-    padding: 10px 20px;
-    float: right;
-    font-size: 22px
-}
-
-.stopMusic {
-    background-color: #ff0;
-    color: #000;
-    padding: 1px 6px 5px 5px;
-    line-height: 1em;
-    border-radius: 100px;
-    cursor: pointer;
-    float: right;
-    font-weight: bold
-}
-
-.stopMusic:hover {
-    background-color: #FF6
-}
-
-.musicLabel {
-    display: block;
-    margin-bottom: 3px
-}
-
-.musicstop {
-    padding-top: 15px
-}
-
-.subscribenow {
-    background-color: #243;
-    padding: 2px 10px 7px;
-    margin: 10px 0 0 0;
-    border-radius: 5px;
-    box-shadow: -1px -1px 6px #000 inset
-}
-
-.todayis {
-    font-weight: bold
-}
-
-.subscribenow input {
-    color: #000
-}
-
-.subscribenow #visitoremail {
-    border-radius: 3px
-}
-
-#loadCss {
-    padding: 5px;
-    background-color: #FFF;
-    color: #333;
-    text-align: center;
-    text-shadow: 1px 0px 6px #fff;
-    position: fixed;
-    background: url(/img/flashee.gif);
-    bottom: 0px;
-    font-weight: bold;
-    font-size: 14px;
-    display: none;
-    width: 110px;
-    cursor: pointer;
-    border-radius: 19px 0 0 0;
-    right: 0
-}
-
-#loadCss:hover {
-    background-color: #CCC;
-    background-image: none;
-    text-decoration: none
-}
-
-#loadCssInner {
-    font-weight: bold;
-    font-size: 16px;
-    display: block;
-    width: 100px;
-    color: #000;
-    cursor: pointer;
-    border-radius: 16px 0px 0px;
-    background-color: #ffffff;
-    height: 40px;
-    padding: 5px
-}
-
-#loadCss:hover #loadCssInner {
-    background-color: #FFF
-}
-
-#backToUgly {
-    display: none
-}
-
-.mapOverlay {
-    width: 200px;
-    height: 110px;
-    margin-top: -105px;
-    position: relative;
-    z-index: 99
-}
-
-#tagline {
-    display: none
-}
-
-.jokeoftheday {
-    border: 2px solid #FF0;
-    text-align: left;
-    padding: 0px;
-    margin-bottom: 5px;
-    border-radius: 7px;
-    background-color: rgb(254, 0, 54);
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    margin: 24px;
-    color: #20acff;
-    font-size: 19px;
-    font-weight: bold
-}
-
-.jokeoftheday img {
-    margin: -23px 0 0 -17px;
-    position: absolute
-}
-
-.jokeoftheday h3 {
-    background-color: #FF0;
-    font-size: 17px;
-    font-weight: bold;
-    padding: 0 2px 4px 28px;
-    color: #000;
-    margin: 0
-}
-
-.jokeoftheday p {
-    margin: 2px 0 4px 2px;
-    height: 67px;
-    line-height: 1.1em;
-    overflow-y: auto
-}
-
-#notsupportedimg {
-    margin-top: 15px
+  width: 120px;
+  height: 205px
 }
 
 @media screen and (max-width: 930px) {
-    #musicContainer {
-        display: none
-    }
+  #musicContainer {
+    display: none
+  }
 }
 
 @media screen and (max-width: 930px) {
-    .hright, .cright, .fright {
-        display: none
-    }
+  .hright, .cright, .fright {
+    display: none
+  }
 
-    .hmiddle, .cmiddle, .fmiddle {
-        width: 72%
-    }
+  .hmiddle, .cmiddle, .fmiddle {
+    width: 72%
+  }
 
-    .hleft, .cleft, .fleft {
-        width: 28%
-    }
+  .hleft, .cleft, .fleft {
+    width: 28%
+  }
 }
 
 @media screen and (max-width: 700px) {
-    .pageframe > div > div {
-        float: none;
-        outline: none;
-        width: 100%
-    }
+  .pageframe > div > div {
+    float: none;
+    outline: none;
+    width: 100%
+  }
 
-    .header > div {
-        height: auto
-    }
+  .header > div {
+    height: auto
+  }
 
-    .brandz {
-        background: none;
-        border: none
-    }
+  .brandz {
+    background: none;
+    border: none
+  }
 }

@@ -1,7 +1,7 @@
 {
   "name": "nova-stylelint",
   "version": "0.1.0",
-  "description": "Stylelint Language Server integragion for Nova",
+  "description": "Stylelint Language Server integration for Nova",
   "author": "Matt Cook",
   "license": "MIT",
   "main": "",

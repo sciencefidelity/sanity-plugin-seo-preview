@@ -1,1 +1,1 @@
-Stylelint.novaextension/CHANGELOG.md
+./stylelint.novaextension/CHANGELOG.md

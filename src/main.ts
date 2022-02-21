@@ -87,7 +87,7 @@ async function asyncActivate() {
     }
   }
 
-  const syntaxes = ["stylelint"]
+  const syntaxes = ["css", "scss", "sass"]
   const env = {
     WORKSPACE_DIR: nova.workspace.path ?? "",
     INSTALL_DIR: dependencyManagement.getDependencyDirectory(),

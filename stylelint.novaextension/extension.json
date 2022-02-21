@@ -18,7 +18,15 @@
     "onLanguage:scss",
     "onLanguage:sass",
     "onLanguage:less",
-    "onLanguage:html"
+    "onLanguage:html",
+    "onWorkspaceContains:package.json",
+    "onWorkspaceContains:.stylelintrc",
+    "onWorkspaceContains:.stylelintrc.json",
+    "onWorkspaceContains:.stylelint.config.js",
+    "onWorkspaceContains:.stylelint.config.cjs",
+    "onWorkspaceContains:.stylelintrc.yaml",
+    "onWorkspaceContains:.stylelintrc.yml"
+
   ],
 
   "entitlements": {

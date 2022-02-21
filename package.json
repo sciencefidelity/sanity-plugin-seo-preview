@@ -14,7 +14,7 @@
   },
   "homepage": "https://github.com/sciencefidelity/Nova-Stylelint",
   "scripts": {
-    "build": "yarn clean && rollup -c rollup.config.main.js && rm -rf astro.novaextension/node_modules",
+    "build": "yarn clean && rollup -c rollup.config.main.js && rm -rf stylelint.novaextension/node_modules",
     "watch": "onchange -i 'src/**' 'rollup.*.js' -- npm run build",
     "clean": "rm ./stylelint.novaextension/Scripts/*",
     "lint": "concurrently 'yarn:lint:*'",

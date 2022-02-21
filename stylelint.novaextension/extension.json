@@ -30,7 +30,6 @@
     "filesystem": "readwrite"
   },
 
-
   "commands": {
     "extensions": [
       {

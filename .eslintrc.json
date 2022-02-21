@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "nova/nova": true
   },
   "extends": [
     "eslint:recommended",
@@ -13,7 +14,7 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "nova"],
   "rules": {
     "indent": ["error", 2],
     "linebreak-style": ["error", "unix"],

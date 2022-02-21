@@ -1,6 +1,5 @@
 import { dependencyManagement } from "nova-extension-utils"
 
-
 nova.commands.register("sciencefidelity.stylelint.reload", reload)
 
 dependencyManagement.registerDependencyUnlockCommand(
@@ -146,7 +145,7 @@ async function asyncActivate() {
   client.start()
 }
 
-export function activate() {
+export async function activate() {
   console.log("activating...")
   // if (nova.inDevMode()) {
   //   const notification = new NotificationRequest("activated")

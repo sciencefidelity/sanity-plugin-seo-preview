@@ -20,8 +20,6 @@ interface MyPluginConfig {
  * ```
  */
 export const myPlugin = createPlugin<MyPluginConfig | void>((config = {}) => {
-  // eslint-disable-next-line no-console
-  console.log('hello from sanity-plugin-seo-preview')
   return {
     name: 'sanity-plugin-seo-preview',
   }

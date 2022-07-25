@@ -1,1 +1,0 @@
-./stylelint.novaextension/CHANGELOG.md

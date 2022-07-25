@@ -1,3 +1,32 @@
-# Nova-Stylelint
+# sanity-plugin-seo-preview
 
-[Stylelint](https://stylelint.io) Language Server integration for [Nova](https://nova.app).
+## Installation
+
+```
+npm install --save sanity-plugin-seo-preview
+```
+
+or
+
+```
+yarn add sanity-plugin-seo-preview
+```
+
+## Usage
+Add it as a plugin in sanity.config.ts (or .js):
+
+```
+ import {createConfig} from 'sanity'
+ import {myPlugin} from 'sanity-plugin-seo-preview'
+
+ export const createConfig({
+     /...
+     plugins: [
+         myPlugin({})
+     ]
+ })
+```
+## License
+
+MIT © Matt Cook
+See LICENSE

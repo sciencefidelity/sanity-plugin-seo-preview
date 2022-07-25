@@ -1,16 +1,23 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "sourceMap": true,
-    "noEmit": true,
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "target": "esnext",
+    "module": "esnext",
+    "esModuleInterop": true,
+    "lib": ["es2015", "es2016", "es2017", "dom"],
     "strict": true,
-    "allowJs": true,
-    "checkJs": false,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
+    "sourceMap": false,
+    "inlineSourceMap": false,
+    "downlevelIteration": true,
+    "declaration": true,
+    "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
-    "forceConsistentCasingInFileNames": true,
-    "types": ["jest", "node", "nova-editor-node"]
+    "emitDecoratorMetadata": true,
+    "outDir": "lib",
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "checkJs": false
   },
-  "include": ["./src"]
+  "include": ["src/**/*"]
 }

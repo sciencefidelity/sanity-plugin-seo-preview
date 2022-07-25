@@ -36,8 +36,8 @@ const Twitter = ({document}: {document: any}) => {
               <span className={s.twitterTitle}>Coast</span>{' '}
               <span className={s.twitterTime}>12 hrs</span>
               <div className={`${u.flex} ${u.flexColumn} ${u.mt2} ${u.mb3}`}>
-                <span className={`${s.twitterDesc} ${u.w100} ${u.mb2}`}></span>
-                <span className={`${s.twitterDesc} ${u.w60}`}></span>
+                <span className={`${s.twitterDesc} ${u.w100} ${u.mb2}`} />
+                <span className={`${s.twitterDesc} ${u.w60}`} />
               </div>
               <div className={s.twitterPostPreview}>
                 <div
@@ -46,7 +46,7 @@ const Twitter = ({document}: {document: any}) => {
                     backgroundImage:
                       "url('https://images.unsplash.com/photo-1647119126202-d13a4263d40c?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8YWxsfDEyfHx8fHx8Mnx8MTY0NzE4Nzc1Mg&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000')",
                   }}
-                ></div>
+                />
                 <div className={s.twitterPreviewContent}>
                   <div className={s.twitterPreviewTitle}>{twitterTitle}</div>
                   <div className={s.twitterPreviewDesc}>{twitterDescription}</div>

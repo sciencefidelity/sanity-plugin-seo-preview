@@ -34,8 +34,8 @@ const Facebook = ({document}: {document: any}) => {
             </div>
           </div>
           <div className={`${u.flex} ${u.flexColumn} ${u.ma3} ${u.mt2}`}>
-            <span className={`${s.ogDesc} ${u.w100} ${u.mb2}`}></span>
-            <span className={`${s.ogDesc} ${u.w60}`}></span>
+            <span className={`${s.ogDesc} ${u.w100} ${u.mb2}`} />
+            <span className={`${s.ogDesc} ${u.w60}`} />
           </div>
           <div className={s.ogPreview}>
             <div
@@ -44,7 +44,7 @@ const Facebook = ({document}: {document: any}) => {
                 backgroundImage:
                   "url('https://images.unsplash.com/photo-1647164926512-2cca88470829?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTc3M3wwfDF8YWxsfDE0fHx8fHx8Mnx8MTY0NzE4Nzc1Mg&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000')",
               }}
-            ></div>
+            />
             <div className={s.ogPreviewBookmark}>
               <div className={s.ogPreviewContent}>
                 <div className={s.ogPreviewMeta}>{url}</div>

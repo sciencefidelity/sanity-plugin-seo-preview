@@ -9,7 +9,7 @@ const googleize = (url: string) => {
   return (
     <div>
       {arr[0]}
-      {arr[1] && <span className={s.subdirectory}>{' › ' + arr[arr.length - 1]}</span>}
+      {arr[1] && <span className={s.subdirectory}>{` › ${arr[arr.length - 1]}`}</span>}
     </div>
   )
 }
